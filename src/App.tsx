@@ -11,8 +11,11 @@ import Why from './components/Why'
 import FAQ from './components/FAQ'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
+import { useScrollReveal } from './motion'
 
 export default function App() {
+  useScrollReveal()
+
   return (
     <div className="page">
       <Header />

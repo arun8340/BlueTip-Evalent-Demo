@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { faqs } from '../data'
+import { stagger } from '../motion'
+import RevealWords from './RevealWords'
 
 const num = (i: number) => String(i + 1).padStart(2, '0')
 
@@ -9,11 +11,13 @@ export default function FAQ() {
 
   return (
     <section id="faq" className="faq">
-      <h2 className="faq__title">Questions colleges ask us</h2>
+      <h2 className="faq__title" data-reveal="words">
+        <RevealWords text="Questions colleges ask us" />
+      </h2>
       <div className="faq__grid">
-        <div className="faq__list">
+        <div className="faq__list" data-reveal="list">
           {faqs.map(([question, answer], i) => (
-            <div key={question}>
+            <div key={question} className="faq__row" style={stagger(i)}>
               <button
                 type="button"
                 className={`faq__q${i === active ? ' faq__q--active' : ''}`}
@@ -25,14 +29,16 @@ export default function FAQ() {
                 {question}
               </button>
               {/* Mobile only: the answer opens under the question instead of in the side panel. */}
-              {i === active && <div className="faq__inline">{answer}</div>}
+              {i === active && <div className="faq__inline faq__fade">{answer}</div>}
             </div>
           ))}
         </div>
-        <div className="faq__panel" aria-live="polite">
-          <div className="faq__panel-kicker">QUESTION {num(active)}</div>
-          <div className="faq__panel-q">{q}</div>
-          <p>{a}</p>
+        <div className="faq__panel" data-reveal="swing" aria-live="polite">
+          <div key={active} className="faq__panel-body">
+            <div className="faq__panel-kicker">QUESTION {num(active)}</div>
+            <div className="faq__panel-q">{q}</div>
+            <p>{a}</p>
+          </div>
           <a href="#demo">Still unsure? Ask us →</a>
         </div>
       </div>
