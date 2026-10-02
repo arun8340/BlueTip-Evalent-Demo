@@ -5,7 +5,7 @@ export default function TopPerformers() {
   const rest = performers.slice(3)
 
   return (
-    <section id="students" className="band">
+    <section id="students" className="band band--students">
       <div className="band__inner">
         <div className="split-head">
           <h2 className="h2">Students get more than a score.</h2>

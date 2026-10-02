@@ -55,7 +55,13 @@ a:hover {
 
 .page {
   min-height: 100vh;
-  background: var(--page);
+  background-color: #eef2fc;
+  background-image:
+    radial-gradient(900px 650px at 0% 0%, rgba(61, 79, 224, 0.28), transparent 70%),
+    radial-gradient(850px 650px at 100% 25%, rgba(122, 85, 216, 0.24), transparent 70%),
+    radial-gradient(900px 700px at 0% 65%, rgba(63, 167, 222, 0.26), transparent 70%),
+    radial-gradient(850px 650px at 100% 100%, rgba(122, 85, 216, 0.22), transparent 70%);
+  background-attachment: fixed;
 }
 
 /* ---------- Shared ---------- */
@@ -96,6 +102,14 @@ a:hover {
   background: #fff;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+}
+
+.band--students {
+  background: linear-gradient(160deg, #e4dafa 0%, #eef0fd 45%, #d6ecfa 100%);
+}
+
+.band--why {
+  background: linear-gradient(135deg, #d9defb 0%, #eef0fd 50%, #e6dcfa 100%);
 }
 
 .band__inner {
@@ -304,6 +318,10 @@ a:hover {
 .hero {
   position: relative;
   overflow: hidden;
+  background:
+    radial-gradient(60% 70% at 85% 35%, rgba(122, 85, 216, 0.3), transparent 70%),
+    radial-gradient(50% 60% at 8% 15%, rgba(61, 79, 224, 0.26), transparent 70%),
+    radial-gradient(45% 55% at 55% 100%, rgba(63, 167, 222, 0.28), transparent 70%);
   margin-top: -72px;
   padding-top: 72px;
 }

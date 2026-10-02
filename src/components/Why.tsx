@@ -7,7 +7,7 @@ const points = [
 
 export default function Why() {
   return (
-    <section className="band">
+    <section className="band band--why">
       <div className="band__inner why">
         <h2 className="h2 h2--sm">Made for colleges and placement teams.</h2>
         <div className="why__grid">
