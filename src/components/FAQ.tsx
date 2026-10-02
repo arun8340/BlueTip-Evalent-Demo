@@ -12,18 +12,21 @@ export default function FAQ() {
       <h2 className="faq__title">Questions colleges ask us</h2>
       <div className="faq__grid">
         <div className="faq__list">
-          {faqs.map(([question], i) => (
-            <button
-              key={question}
-              type="button"
-              className={`faq__q${i === active ? ' faq__q--active' : ''}`}
-              aria-pressed={i === active}
-              onClick={() => setActive(i)}
-              onMouseEnter={() => setActive(i)}
-            >
-              <span className="faq__num">{num(i)}</span>
-              {question}
-            </button>
+          {faqs.map(([question, answer], i) => (
+            <div key={question}>
+              <button
+                type="button"
+                className={`faq__q${i === active ? ' faq__q--active' : ''}`}
+                aria-pressed={i === active}
+                onClick={() => setActive(i)}
+                onMouseEnter={() => setActive(i)}
+              >
+                <span className="faq__num">{num(i)}</span>
+                {question}
+              </button>
+              {/* Mobile only: the answer opens under the question instead of in the side panel. */}
+              {i === active && <div className="faq__inline">{answer}</div>}
+            </div>
           ))}
         </div>
         <div className="faq__panel" aria-live="polite">

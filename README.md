@@ -19,6 +19,11 @@ npm run preview  # serve the production build
 - `src/index.css` — design tokens and all styles (values match the handoff exactly).
 - `src/assets/evalent-logo.svg` — client-supplied logo.
 
+## Breakpoints
+
+From design "Evalent Landing K Devices": desktop ≥960px, tablet 600–959px, mobile <600px (media queries at the end of `src/index.css`).
+Below 960px the nav collapses into a hamburger menu; below 560px "Sign in" moves into that menu; on mobile the FAQ answer opens under the question.
+
 ## Interactions
 
 - Hero headline variable-font "lens" and card parallax live in `Hero.tsx`; both are disabled under `prefers-reduced-motion`.
