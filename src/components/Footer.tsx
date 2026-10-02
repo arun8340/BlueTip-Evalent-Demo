@@ -1,4 +1,5 @@
 import logo from '../assets/evalent-logo.svg'
+import { stagger } from '../motion'
 
 const columns = [
   {
@@ -38,7 +39,7 @@ const bottomLinks = [
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="footer__top">
+      <div className="footer__top" data-reveal="stage">
         <div className="footer__brand">
           <div className="footer__logo">
             <img src={logo} alt="BluetipAI Evalent" />
@@ -46,8 +47,8 @@ export default function Footer() {
           <p>AI-powered assessment and proctoring for colleges and placement teams.</p>
         </div>
         <div className="footer__cols">
-          {columns.map((col) => (
-            <div key={col.heading} className="footer__col">
+          {columns.map((col, i) => (
+            <div key={col.heading} className="footer__col" style={stagger(i + 1)}>
               <div className="footer__heading">{col.heading}</div>
               {col.links.map(([label, href]) => (
                 <a key={label} href={href}>

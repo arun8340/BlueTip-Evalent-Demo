@@ -1,3 +1,6 @@
+import { stagger } from '../motion'
+import RevealWords from './RevealWords'
+
 const points = [
   ['Fits your structure', 'Courses, departments, batches and roll numbers are built in.'],
   ['Questions ready on day one', 'Over a million MCQ, coding and interview questions to start from.'],
@@ -9,11 +12,15 @@ export default function Why() {
   return (
     <section className="band band--why">
       <div className="band__inner why">
-        <h2 className="h2 h2--sm">Made for colleges and placement teams.</h2>
+        <h2 className="h2 h2--sm" data-reveal="words">
+          <RevealWords text="Made for colleges and placement teams." />
+        </h2>
         <div className="why__grid">
           {points.map(([title, body], i) => (
-            <div key={title}>
-              <div className="why__num">{String(i + 1).padStart(2, '0')}</div>
+            <div key={title} className="why__item" data-reveal="rule" style={stagger(i)}>
+              <div className="why__num">
+                <span>{String(i + 1).padStart(2, '0')}</span>
+              </div>
               <div className="why__title">{title}</div>
               <div className="why__body">{body}</div>
             </div>

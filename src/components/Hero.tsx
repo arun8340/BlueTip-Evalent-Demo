@@ -1,4 +1,6 @@
 import { useEffect, useRef } from 'react'
+import { reducedMotion, stagger, useScrollVar } from '../motion'
+import CountUp from './CountUp'
 
 type Char = HTMLSpanElement & { _v: number; _last: number }
 
@@ -12,16 +14,18 @@ const lines = [
   ],
 ]
 
+// How far the hero has scrolled out of view, 0–1, for the scroll parallax.
+const heroProgress = (r: DOMRect) => -r.top / r.height
+
 const NAVY = [13, 27, 51]
 const INDIGO = [61, 79, 224]
 const VIOLET = [122, 85, 216]
-
-const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
 export default function Hero() {
   const heroRef = useRef<HTMLElement>(null)
   const stageRef = useRef<HTMLDivElement>(null)
   const titleRef = useRef<HTMLHeadingElement>(null)
+  useScrollVar(heroRef, '--hp', heroProgress)
 
   // Card parallax: follows the cursor over the hero, drifts gently when idle.
   useEffect(() => {
@@ -134,13 +138,13 @@ export default function Hero() {
     <section className="hero" ref={heroRef}>
       <div className="hero__dots" />
       <div className="hero__grid">
-        <div>
+        <div className="hero__copy">
           <div className="hero__badge">
             <span className="hero__badge-new">New</span>Resume-based AI interviews
           </div>
           <h1 className="hero__title" ref={titleRef} aria-label="Help every student walk into placements ready.">
             {lines.map((line, li) => (
-              <span key={li} className="hero__line" aria-hidden="true">
+              <span key={li} className="hero__line" aria-hidden="true" style={{ animationDelay: `${120 + li * 110}ms` }}>
                 {line.map((part, pi) => (
                   <span key={pi} className={part.accent ? 'hero__accent' : undefined}>
                     {pi > 0 && ' '}
@@ -226,16 +230,18 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="hero__stats-wrap">
+      <div className="hero__stats-wrap" data-reveal="stage">
         <div className="hero__stats">
           {[
             ['1M+', 'questions'],
             ['10,000+', 'assessments run'],
             ['17,000+', 'coding problems'],
             ['55', 'languages, tools & SQL engines'],
-          ].map(([value, label]) => (
-            <div key={label} className="hero__stat">
-              <div className="hero__stat-value">{value}</div>
+          ].map(([value, label], i) => (
+            <div key={label} className="hero__stat" style={stagger(i)}>
+              <div className="hero__stat-value">
+                <CountUp value={value} />
+              </div>
               <div className="hero__stat-label">{label}</div>
             </div>
           ))}

@@ -1,3 +1,6 @@
+import { stagger } from '../motion'
+import RevealWords from './RevealWords'
+
 const roles = [
   {
     title: 'Super Admin',
@@ -31,10 +34,12 @@ const roles = [
 export default function Roles() {
   return (
     <section id="roles" className="roles">
-      <h2 className="h2 h2--sm roles__title">One platform, three workspaces.</h2>
+      <h2 className="h2 h2--sm roles__title" data-reveal="words">
+        <RevealWords text="One platform, three workspaces." />
+      </h2>
       <div className="roles__grid">
-        {roles.map((r) => (
-          <div key={r.title} className="role" style={{ background: r.bg }}>
+        {roles.map((r, i) => (
+          <div key={r.title} className="role" data-reveal="fan" style={stagger(i, { background: r.bg })}>
             <h3>{r.title}</h3>
             <div className="role__scope" style={{ color: r.accent }}>
               {r.scope}
