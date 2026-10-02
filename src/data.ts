@@ -1,7 +1,5 @@
 // Static page content. Move to a CMS/JSON source if it needs to be edited without a deploy.
 
-export type Performer = { name: string; score: string; rank: number; initials: string }
-
 const performerScores: [string, string][] = [
   ['Praveena Kurada', '100'],
   ['Pravallika Chirla', '97'],
@@ -25,7 +23,7 @@ const initials = (name: string) =>
     .join('')
     .toUpperCase()
 
-export const performers: Performer[] = performerScores.map(([name, score], i) => ({
+export const performers = performerScores.map(([name, score], i) => ({
   name,
   score,
   rank: i + 1,
@@ -34,19 +32,19 @@ export const performers: Performer[] = performerScores.map(([name, score], i) =>
 
 export const podiumColors = ['#DFF1FB', '#ECE4FB', '#E2E5FC']
 
-export const languages = [
+const languages = [
   'Python', 'Java', 'C++', 'JavaScript', 'TypeScript', 'Go', 'C', 'C#', 'Rust',
   'Ruby', 'Kotlin', 'Swift', 'PHP', 'Bash', 'Assembly', 'Elixir', 'R', 'PowerShell',
 ]
 
-export const tools = [
+const tools = [
   'React', 'Vue.js', 'Angular', 'Node.js', 'npm', 'HTML5', 'CSS3', 'jQuery', 'Redux', 'Git',
   'Docker', 'Kubernetes', 'Jenkins', 'Django', 'Laravel', 'GraphQL', 'Firebase', 'Figma',
   'MongoDB', 'AWS', 'Azure', 'OpenAI', 'Power BI', 'Tableau', 'Salesforce', 'Shopify',
   'HubSpot', 'IBM', 'Ansible', 'iOS', 'Unity', 'Unreal',
 ]
 
-export const sqlEngines = ['MySQL', 'PostgreSQL', 'SQLite', 'SQL Server', 'Oracle']
+const sqlEngines = ['MySQL', 'PostgreSQL', 'SQLite', 'SQL Server', 'Oracle']
 
 export const marqueeRows = [
   { label: 'Languages', items: languages, duration: 50, reverse: false, bg: '#E2E5FC', fg: '#2B37A8' },
