@@ -2,7 +2,7 @@ const points = [
   ['Fits your structure', 'Courses, departments, batches and roll numbers are built in.'],
   ['Questions ready on day one', 'Over a million MCQ, coding and interview questions to start from.'],
   ['Whole-batch exams', 'One schedule for the batch, a randomised paper for each student.'],
-  ['Real people to help', 'Setup and exam-day support, Monday to Friday, 9:00–18:00.'],
+  ['Real people to help', 'Setup and exam-day support, Monday to Friday, 9:00–18:00 IST.'],
 ]
 
 export default function Why() {

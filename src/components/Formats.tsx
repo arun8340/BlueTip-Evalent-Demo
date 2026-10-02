@@ -12,7 +12,7 @@ export default function Formats() {
         <div className="format format--mcq">
           <div className="format__kicker">MULTIPLE CHOICE</div>
           <h3>A fresh paper for every student.</h3>
-          <p>Aptitude and technical tests from 1M+ questions, randomised per candidate and matched to your syllabus.</p>
+          <p>Aptitude and technical tests from 1M+ questions, randomised per student and matched to your syllabus.</p>
           <div className="format__mock mcq">
             <div className="mcq__q">Average lookup time in a hash table with chaining?</div>
             <div className="mcq__opts">
@@ -25,7 +25,7 @@ export default function Formats() {
 
         <div className="format format--interview">
           <div className="format__kicker">AI INTERVIEW</div>
-          <h3>An interview built from their résumé.</h3>
+          <h3>An interview built from their resume.</h3>
           <p>Spoken interviews from 50,000+ questions. It asks follow-ups and scores content and communication.</p>
           <div className="format__mock chat">
             <div className="chat__ai">How did you handle back-pressure in your ingestion pipeline?</div>

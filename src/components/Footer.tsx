@@ -69,7 +69,7 @@ export default function Footer() {
             ))}
             <span className="footer__support">
               <span />
-              Support: Mon–Fri, 9:00–18:00
+              Support: Mon–Fri, 9:00–18:00 IST
             </span>
           </div>
           <span>© 2026 Evalent</span>
