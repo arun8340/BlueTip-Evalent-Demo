@@ -1945,6 +1945,13 @@ a:hover {
   }
 }
 
+/* "Hover a row to pause" only makes sense with a hover-capable pointer and a moving marquee. */
+@media (hover: none) {
+  .languages__head span {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -1952,5 +1959,9 @@ a:hover {
 
   .mq__track {
     animation: none !important;
+  }
+
+  .languages__head span {
+    display: none;
   }
 }

@@ -75,7 +75,7 @@ export const aiStages = [
     bg: '#E2E5FC',
     fg: '#2B37A8',
     items: [
-      { title: 'Résumé-based interviews', body: 'Personal questions for each student, not one script.' },
+      { title: 'Resume-based interviews', body: 'Personal questions for each student, not one script.' },
       { title: 'Computer-vision proctoring', body: 'Identity checks and monitoring in the browser.' },
     ],
   },
@@ -96,11 +96,11 @@ export const faqs: [string, string][] = [
   ['Do we need to write all the questions ourselves?', 'No. You can start from over a million platform questions and 17,000+ coding problems, use a saved template, or add your own.'],
   ['Does proctoring need any software installed?', 'No. Proctoring runs in the student’s browser.'],
   ['How do you verify a student’s identity?', 'Identity checks run through the webcam, with six identity signals tracked during the exam.'],
-  ['Does every student get the same AI interview?', 'No. Questions are generated from each student’s résumé, and follow-ups depend on their answers.'],
+  ['Does every student get the same AI interview?', 'No. Questions are generated from each student’s resume, and follow-ups depend on their answers.'],
   ['Which programming languages can students use?', '18 programming languages and 5 SQL engines: MySQL, PostgreSQL, SQLite, SQL Server and Oracle.'],
   ['Can we upload our own question bank?', 'Yes. You can create or bulk-upload MCQ, coding and AI interview questions.'],
   ['How many students can take an assessment at once?', 'Answer to be added by the Evalent team.'],
   ['What happens if a student’s connection drops?', 'Answer to be added by the Evalent team.'],
   ['Who can see results, and when?', 'College Admins publish results when they are ready. Students then see their scores and improvement areas, and Super Admins see readiness across the institution.'],
-  ['What support is available?', 'Our team supports setup and live assessments Monday to Friday, 9:00–18:00.'],
+  ['What support is available?', 'Our team supports setup and live assessments Monday to Friday, 9:00–18:00 IST.'],
 ]

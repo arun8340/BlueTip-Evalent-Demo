@@ -9,7 +9,7 @@ export default function CTA() {
             See Evalent with <span>your own syllabus.</span>
           </h2>
           <p>
-            Bring your question bank or syllabus. We'll create, run, monitor and evaluate a sample assessment with your
+            Bring your question bank or syllabus. We’ll create, run, monitor and evaluate a sample assessment with your
             team.
           </p>
         </div>

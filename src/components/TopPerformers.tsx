@@ -9,7 +9,7 @@ export default function TopPerformers() {
       <div className="band__inner">
         <div className="split-head">
           <h2 className="h2">Students get more than a score.</h2>
-          <p>Every result comes with guidance on what to work on next. Meet this term's top performers.</p>
+          <p>Every result comes with guidance on what to work on next. Meet this term’s top performers.</p>
         </div>
         <div className="podium">
           {podium.map((p, i) => (

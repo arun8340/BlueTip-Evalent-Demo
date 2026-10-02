@@ -136,7 +136,7 @@ export default function Hero() {
       <div className="hero__grid">
         <div>
           <div className="hero__badge">
-            <span className="hero__badge-new">New</span>Résumé-based AI interviews
+            <span className="hero__badge-new">New</span>Resume-based AI interviews
           </div>
           <h1 className="hero__title" ref={titleRef} aria-label="Help every student walk into placements ready.">
             {lines.map((line, li) => (

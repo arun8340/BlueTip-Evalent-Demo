@@ -7,7 +7,7 @@ export default function Integrity() {
         <div className="integrity__head">
           <h2 className="h2">Proctoring, no invigilator needed.</h2>
           <p>
-            27 signals run in the student's browser. Every flag has a timestamp and a link to the recording, so you can
+            27 signals run in the student’s browser. Every flag has a timestamp and a link to the recording, so you can
             review what actually happened.
           </p>
         </div>
